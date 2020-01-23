@@ -36,7 +36,7 @@ public class RoomManager
     {
         // 2nd floor and roof rooms
         Room operatingRoom, secondFloorHallway, secondFloorStairWell, recoveryRoom, roof;
-        operatingRoom = new Room("operating room" , 1,"a operating room, there is a bed with blood on it");
+        operatingRoom = new Room("operating room" , 1,"an operating room, there is a bed with blood on it");
         secondFloorHallway = new Room("second floor hallway" , 2, "a dark hallway");
         secondFloorStairWell = new Room("second floor stairwell" , 3, "the second floor stairwell");
         recoveryRoom  = new Room("recovery room" , 4, "a room with beds in it, not really anything to see");
@@ -168,8 +168,8 @@ public class RoomManager
         trapRoom.addConnectedRoom(bWingHallway, false);
         trapTarget = toilets;
         // the enemy
-        Enemy enemy = new Enemy(morgue, this);
-        Enemy enemy2 = new Enemy(garage, this);
+        Enemy enemy = new Enemy(morgue, this, "nurse");
+        Enemy enemy2 = new Enemy(garage, this, "doctor");
         player.setCurrentRoom(operatingRoom);
         player.getCurrentRoom().onEnter();
         player.addPreviousRoom(player.getCurrentRoom());

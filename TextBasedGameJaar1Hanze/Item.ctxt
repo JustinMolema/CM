@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Item
+comment0.text=\r\n\ \ \ Deze\ klasse\ omschrijft\ een\ item\r\n\ \ \ @author\ Justin\ Molema,\ Johan\ van\ Hengelaar\r\n\ \ \ @version\ 23-1-2020\r\n
+comment1.params=name\ weight
+comment1.target=Item(java.lang.String,\ int)
+comment1.text=\r\n\ \ \ constructor\ voor\ het\ aanmaken\ van\ een\ item\r\n\ \ \ @param\ String\ name\ de\ naam\ van\ het\ item\r\n\ \ \ @param\ int\ weight\ het\ gewicht\ van\ een\ item\r\n
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment2.text=\r\n\ getter\ voor\ de\ naam\r\n\ @return\ name\r\n
+comment3.params=name
+comment3.target=void\ setName(java.lang.String)
+comment3.text=\r\n\ setter\ voor\ de\ naam\r\n\ @param\ String\ name\r\n
+comment4.params=
+comment4.target=int\ getWeight()
+comment4.text=\r\n\ getter\ voor\ het\ gewicht\r\n\ @return\ gewicht\r\n
+comment5.params=weight
+comment5.target=void\ setWeight(int)
+comment5.text=\r\n\ setter\ voor\ het\ gewicht\r\n\ @param\ int\ weight\r\n
+numComments=6

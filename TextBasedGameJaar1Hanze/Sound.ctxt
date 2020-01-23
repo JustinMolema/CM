@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Sound
+comment1.params=soundName
+comment1.target=void\ play(java.lang.String)
+comment1.text=\ \r\n\ Methode\ om\ een\ geluid\ af\ te\ spelen.\r\n
+numComments=2

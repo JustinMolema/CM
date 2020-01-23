@@ -13,6 +13,8 @@ public class Player
     private HashMap<Integer, Room> previousRooms;
     private RoomManager roomManager;
 
+    public boolean isKilled = false;
+
     /** 
      * constructor voor de player
     */

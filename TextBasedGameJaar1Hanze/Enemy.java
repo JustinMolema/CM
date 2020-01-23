@@ -20,21 +20,36 @@ public class Enemy
     private ArrayList<Room> currentPath;
     private ArrayList<Room> tempPath;
     
+    private String name;
+    
     /**
      * Constructor van de enemy
      * @param startingRoom de kamer waarin de enemy moet starten
      * @param rManager referentie naar de roommanager, nodig om bij de locatie van de speler te kunnen komen
      */
-    public Enemy(Room startingRoom, RoomManager rManager)
+    public Enemy(Room startingRoom, RoomManager rManager, String name)
     {
         this.rManager = rManager;
         rManager.addEnemies(this);
-        
+        this.name = name;
         currentRoom = startingRoom;
         Timer timer = new Timer();
         timer.schedule(new EnemyTask(this), 5000);
     }
-
+    /**
+     * getter voor de naam
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+    /**
+     * setter voor de naam
+     * @param String name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
     /**
      *  returns a random room of all rooms connected to the given room
      * @param room  the room given
@@ -72,10 +87,14 @@ public class Enemy
         currentRoom = nextRoom;
         if(rManager.getPlayer().getCurrentRoom() == nextNextRoom)
         {
+            Sound scary1 = new Sound();
+            scary1.play("sounds/game/scary_1.wav");
             System.out.println(ConsoleColors.RED_BOLD_BRIGHT + "You hear steps heading your way..." + ConsoleColors.RESET);
         }
         if(rManager.getPlayer().getCurrentRoom() == nextRoom)
         {
+            Sound scary2 = new Sound();
+            scary2.play("sounds/game/scary_2.wav");
             System.out.println(ConsoleColors.RED_BOLD_BRIGHT + "The steps are really close now..." + ConsoleColors.RESET);
         }
         if(rManager.getPlayer().getCurrentRoom() == currentRoom)
@@ -84,17 +103,28 @@ public class Enemy
             {
                 if(rManager.getPlayer().checkInventory("gun"))
                 {
-                    // gunshot sound here
-                    System.out.println(ConsoleColors.RED_BOLD_BRIGHT + "You shot the monster" + ConsoleColors.RESET);
+                    Sound nursedie = new Sound();
+                    nursedie.play("sounds/game/" + name + "_dies_gunshot.wav");
+                    System.out.println(ConsoleColors.RED_BOLD_BRIGHT + "You shot the " + name + ConsoleColors.RESET);
                     Die();
                 }
                 else
                 {
-                    GameManager.endGame(ConsoleColors.RED_BOLD_BRIGHT + "You have been murdered by the nurse" + ConsoleColors.RESET);
+                    Random random = new Random();
+                    int randomInt = random.nextInt(4);
+                    randomInt += 1;
+                    Sound death = new Sound();
+                    death.play("sounds/game/player_death_" + randomInt + ".wav");
+                    System.out.println(ConsoleColors.RED_BOLD_BRIGHT + "You have been murdered by the nurse" + ConsoleColors.RESET + "\n Type try again to start again");
+                    rManager.getPlayer().isKilled = true;
+                    Die();
+                    //GameManager.endGame("");
                 }
             }
             else
             {
+                Sound scary3 = new Sound();
+                scary3.play("sounds/game/scary_3.wav");
                 System.out.println(ConsoleColors.RED_BOLD_BRIGHT + "Someone is in the room with you... DON'T MOVE..." + ConsoleColors.RESET);
             }
             

@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=GameManager
+comment0.text=\r\n\ \ \ Deze\ klasse\ is\ de\ hoofdklasse\ van\ de\ toepassing,\ als\ je\ bluej\ gebruikt,\ roep\ dan\ de\ main\ method\ aan\r\n\ \ \ @author\ Justin\ Molema,\ Johan\ van\ Hengelaar\r\n\ \ \ @version\ 23-1-2020\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=
+comment2.target=void\ startGame()
+comment2.text=\ \r\n\ Methode\ om\ de\ game\ te\ starten,\ dit\ is\ een\ aparte\ methode\ zodat\ hij\ in\ run\ time\ opnieuw\ gestart\ kan\ worden\r\n
+comment3.params=text
+comment3.target=void\ endGame(java.lang.String)
+comment3.text=\r\n\ \ \ Deze\ methode\ brengt\ de\ speler\ terug\ naar\ het\ hoofdmenu\ \ \ \r\n\ \ \ @param\ String\ text\ een\ tekst\ die\ eerst\ uit\ wordt\ geprint\ voordat\ de\ speler\ terug\ wordt\ gebracht\r\n
+numComments=4
