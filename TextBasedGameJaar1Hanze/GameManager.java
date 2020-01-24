@@ -114,11 +114,11 @@ public class GameManager
                                         {
                                             Sound escape = new Sound();
                                             escape.play("sounds/game/escape.wav");
-                                            endGame("You succesfully escaped!");
+                                            endGame("You succesfully escaped! \n\n Thanks for playing!");
                                             break;
                                         }
 
-                                        if(room.roomName == "traproom")
+                                        if(room.roomName == "left room")
                                         {
                                             Sound trap = new Sound();
                                             trap.play("sounds/game/trap_fall.wav");
